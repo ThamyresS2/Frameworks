@@ -5,9 +5,9 @@ import { PrismaService } from "prisma.databases";
 export class DeleteTodoRepository {
   constructor(private readonly prisma: PrismaService) {}
 
-  async delete(data: { id: string }) {
+  async delete(id: string ) {
     return await this.prisma.todo.delete({
-      where: data
+      where: id
     });
   }
 }

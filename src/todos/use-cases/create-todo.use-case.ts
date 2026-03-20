@@ -19,5 +19,5 @@ export class CreateTodoUseCase {
                 this.logger.error(error);
                 throw new Error('Failed to create toDo');
             };
-        }
+    }
 }
