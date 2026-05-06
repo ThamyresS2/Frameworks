@@ -1,4 +1,5 @@
 import { Injectable } from "@nestjs/common";
+import exp from "constants";
 import { PrismaService } from "prisma.databases";
 
 //  
@@ -10,3 +11,4 @@ export class FindAllTodoRepository{
         return await this.prisma.todo.findMany();
     }
 }
+export default Find
