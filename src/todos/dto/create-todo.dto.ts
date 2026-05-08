@@ -1,3 +1,8 @@
+enum TodoPriority{
+    LOW = 'LOW',
+    MEDIUM = 'MEDIUM',
+    HIGH = 'HIGH',
+}
 export class CreateTodoDto {
     title: string;
     description: string;
@@ -8,9 +13,4 @@ export class CreateTodoDto {
     userId: string;
     createdAt: Date;
     updatedAt: Date;
-}
-enum TodoPriority{
-    LOW = 'LOW',
-    MEDIUM = 'MEDIUM',
-    HIGH = 'HIGH',
 }

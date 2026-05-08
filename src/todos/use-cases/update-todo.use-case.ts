@@ -1,11 +1,11 @@
 import { Injectable, Logger } from "@nestjs/common";
-import { UpdateTodoByID } from "../repositorio";
+import { UpdateTodoByIdRepository } from "../repositorio";
 import { UpdateTodoDto } from "../dto/update-todo.dto";
 
 @Injectable()
 export class UpdateTodoUseCase {
     constructor(
-        private readonly repository: UpdateTodoByID,
+        private readonly repository: UpdateTodoByIdRepository,
         private readonly logger: Logger,
     ) { }
 

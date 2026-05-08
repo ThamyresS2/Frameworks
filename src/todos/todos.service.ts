@@ -1,20 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
-import { CreateTodoRepository, FindAllTodoRepository } from './repositorio';
-import { find } from 'rxjs';
-import { create } from 'node:domain';
-import { FindAllTodosUseCase } from './use-cases/find-all-todo.use-case';
-import { CreateTodoUseCase } from './use-cases/create-todo.use-case';
+import { CreateTodoUseCase, FindAllTodosUseCase, FindTodoByIdUseCase, UpdateTodoUseCase, DeleteTodoUseCase } from './use-cases';
 
 @Injectable()
 export class TodosService {
   constructor(
     private readonly findAllTodoUseCase: FindAllTodosUseCase,
     private readonly createTodoUseCase: CreateTodoUseCase,
-    private readonly findOneTodoUseCase: FindAllTodosUseCase,
-    private readonly updateTodoUseCase: CreateTodoUseCase,
-    private readonly removeTodoUseCase: CreateTodoUseCase,
+    private readonly findOneTodoUseCase: FindTodoByIdUseCase,
+    private readonly updateTodoUseCase: UpdateTodoUseCase,
+    private readonly removeTodoUseCase: DeleteTodoUseCase,
       
   ){}
 
@@ -22,19 +18,19 @@ export class TodosService {
     return this.createTodoUseCase.execute(data);
   }
 
-  findAll(findAllTodoDto) {
+  findAll() {
     return this.findAllTodoUseCase.execute();
   }
 
-  findOne(findOneTodoDto) {
-    return this.findOneTodoUseCase.execute(findOneTodoDto);
+  findOne(id: string) {
+    return this.findOneTodoUseCase.execute(id);
   }
 
-  update(id: number, updateTodoDto: UpdateTodoDto) {
-    return this.updateTodoUseCase.execute(updateTodoDto);
+  update(id: string, updateTodoDto: UpdateTodoDto) {
+    return this.updateTodoUseCase.execute(id , updateTodoDto );
   }
 
-  remove(id: number) {
-    return this.removeTodoUseCase.execute (id);
+  remove(id: string) {
+    return this.removeTodoUseCase.execute(id);
   }
 }

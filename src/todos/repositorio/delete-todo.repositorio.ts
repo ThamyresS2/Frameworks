@@ -7,7 +7,7 @@ export class DeleteTodoRepository {
 
   async delete(id: string ) {
     return await this.prisma.todo.delete({
-      where: id
+      where: { id }
     });
   }
 }

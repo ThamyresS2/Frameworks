@@ -1,10 +1,10 @@
 import { Injectable, Logger } from "@nestjs/common";
-import { FindTodoByRepository } from "../repositorio";
+import { FindTodoByIdRepository } from "../repositorio";
 
 @Injectable()
 export class FindTodoByIdUseCase {
     constructor(
-        private readonly repository: FindTodoByRepository,
+        private readonly repository: FindTodoByIdRepository,
         private readonly logger: Logger,
     ) { }
 

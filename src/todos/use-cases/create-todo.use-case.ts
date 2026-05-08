@@ -1,4 +1,4 @@
-import { Inject, Injectable, Logger } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { CreateTodoRepository } from "../repositorio";
 import { CreateTodoDto } from "../dto/create-todo.dto";
 

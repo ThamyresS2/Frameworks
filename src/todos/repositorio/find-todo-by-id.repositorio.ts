@@ -3,7 +3,7 @@ import { PrismaService } from "prisma.databases";
 
 //  
 @Injectable()
-export class FindTodoByRepository{
+export class FindTodoByIdRepository{
     constructor (private readonly prisma: PrismaService){}
 
     async findById(id: String){

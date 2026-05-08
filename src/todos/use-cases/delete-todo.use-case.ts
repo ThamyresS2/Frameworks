@@ -1,4 +1,4 @@
-import { Inject, Injectable, Logger, NotFoundException } from "@nestjs/common";
+import { Injectable, Logger, NotFoundException } from "@nestjs/common";
 import { DeleteTodoRepository } from "../repositorio";
 @Injectable()
 export class DeleteTodoUseCase {
