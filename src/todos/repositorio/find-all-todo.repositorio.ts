@@ -1,13 +1,13 @@
-import { Injectable } from "@nestjs/common";
-import { PrismaService } from "prisma.databases";
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/shared/databases/prisma.database';
 
-//  
+//
 @Injectable()
-export class FindAllTodoRepository{
-    constructor (private readonly prisma: PrismaService){}
+export class FindAllTodoRepository {
+  constructor(private readonly prisma: PrismaService) {}
 
-    async findAll(){
-        return await this.prisma.todo.findMany();
-    }
+  async findAll() {
+    return await this.prisma.todo.findMany();
+  }
 }
-export default FindAllTodoRepository
+export default FindAllTodoRepository;

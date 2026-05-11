@@ -1,16 +1,11 @@
-enum TodoPriority{
-    LOW = 'LOW',
-    MEDIUM = 'MEDIUM',
-    HIGH = 'HIGH',
-}
+import { TodoPriority } from '@prisma/client';
+
 export class CreateTodoDto {
-    title: string;
-    description: string;
-    completed: Boolean;
-    priority: TodoPriority;
-    dueAt: Date;
-    completedAt: Date;
-    userId: string;
-    createdAt: Date;
-    updatedAt: Date;
+  title: string;
+  description?: string;
+  completed?: boolean;
+  priority?: TodoPriority;
+  dueAt?: Date;
+  completedAt?: Date;
+  userId: string;
 }
